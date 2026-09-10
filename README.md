@@ -16,7 +16,7 @@ before it becomes unmanageable.
 | **Problem Statement** | Stress & Workload Manager |
 | **Phase** | Workshop & Prototype Phase |
 | **Prototype period** | 31 August – 13 September 2026 |
-| **Current status** | Ideation and documentation established; application development not yet started |
+| **Current status** | Ideation, documentation and a clickable design prototype established; application development not yet started |
 
 ---
 
@@ -121,14 +121,19 @@ memory.
 
 ## Prototype
 
-**Status: not yet built.** No application code, design file, or clickable
-prototype exists in this repository at present.
+**Status: a clickable design prototype exists. No application code exists.**
+The core journey can be walked end to end in Figma, but every flow is
+*simulated* with representative data — nothing is backed by working code.
 
 | Artefact | Status |
 |---|---|
-| Clickable prototype | Coming soon |
+| Clickable prototype | **Built** — 28 connected screens (AUTH · ONBOARDING · CORE), plus 8 v2 concept screens |
+| Design system | **Built** — foundations, component library, mascot semantic library |
+| UX / iterations evidence | **Built** — 13-section design-process page |
+| Figma link | `https://www.figma.com/design/Y2ce2KYSTXDkNBqLAMcfaF/` — sharing not yet verified as public |
+| Application code | **Not started** |
 | Demo video | Coming soon |
-| Screenshots | Coming soon |
+| Screenshots | Not yet exported |
 
 📄 [Prototype scope, planned screens, and technical proof status](prototype/README.md)
 
@@ -253,7 +258,7 @@ An `app/` directory will be added when application development begins.
 
 ## Current Status
 
-Honest summary as of **1 September 2026**:
+Honest summary as of **3 September 2026**:
 
 | Area | Status |
 |---|---|
@@ -262,13 +267,18 @@ Honest summary as of **1 September 2026**:
 | Idea exploration and rejected alternatives | Documented |
 | Architecture and AI responsibility model | Specified |
 | Technical feasibility assessment | Documented |
+| **Clickable prototype (design)** | **Built** — full journey connected, no dead ends |
+| **Design system & component library** | **Built** |
+| **UX / iterations evidence** | **Built** |
 | Visual diagrams (problem tree, mind map, user flow) | Not started |
+| Prototype screenshots exported to repo | Not started |
 | Application code | **Not started** |
-| Clickable prototype | Not started |
 | Mentor consultations | Scheduled, not yet held |
 | Presentation materials | Not started |
 
-**Nothing in this repository is implemented.** Every technical claim above
+**No application code is implemented.** The prototype demonstrates the intended
+journey through designed, simulated screens; it does not execute any capture,
+extraction, or workload calculation. Every technical claim in this repository
 describes intended design and is labelled accordingly.
 
 ---

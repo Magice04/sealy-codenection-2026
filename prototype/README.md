@@ -1,8 +1,8 @@
 # SEALY — Prototype
 
-> **Status as of 1 September 2026: no prototype has been built yet.**
+> **Status as of 3 September 2026: a clickable design prototype exists. No application code exists.**
 >
-> No design file, no clickable prototype, no screens, no application code, and no screenshots exist in this repository. This document defines what the prototype must demonstrate and records its status honestly. Every status field is updated only when the corresponding artefact actually exists.
+> A Figma design file with a fully connected, clickable prototype of the core journey now exists and can be walked end to end. **Nothing is backed by working code** — there is no Expo application, no database, and no live AI extraction. Every flow in the prototype is *simulated* with representative data. That distinction is stated explicitly in [What Is Interactive vs Simulated](#what-is-interactive-vs-simulated) below and must be stated in the demo and pitch too.
 
 ---
 
@@ -43,19 +43,23 @@ Step 3 is deliberate and must be visible in the prototype. Extracted items are *
 
 ## Planned Screens
 
-None of these exist yet. This is the intended minimum set for the journey to be demonstrable end to end.
+All nine are now designed. Screens 1–8 are built and connected in the clickable prototype; screen 9 exists as a v2 concept only and is not part of the demo flow.
 
 | # | Screen | Purpose | Status |
 |---|---|---|---|
-| 1 | Onboarding | Establish life areas and available capacity | Not started |
-| 2 | Home / workload overview | Total load across life areas; overloaded days visible | Not started |
-| 3 | Capture | Camera with framing guidance | Not started |
-| 4 | Extraction review | Candidate items, each editable, acceptable, or rejectable | Not started |
-| 5 | Workload detail for a day | Estimated effort against available capacity | Not started |
-| 6 | Explanation | Which commitments produce the overload | Not started |
-| 7 | Rebalancing proposals | Suggested changes with trade-offs; per-item approval | Not started |
-| 8 | Recovery | Protected rest and recovery time | Not started |
-| 9 | SEALY conversation | Explains computed results in SEALY's voice | Not started |
+| 1 | Onboarding | Establish life areas and available capacity | **Designed — 3 screens, connected** |
+| 2 | Home / workload overview | Total load across life areas; overloaded days visible | **Designed — Default + Overload states** |
+| 3 | Capture | Camera with framing guidance | **Designed — Camera + Scanning** |
+| 4 | Extraction review | Candidate items, each editable, acceptable, or rejectable | **Designed — per-item Accept / Reject shown**¹ |
+| 5 | Workload detail for a day | Estimated effort against available capacity | **Designed — Thursday, 7h vs 4h, +3h** |
+| 6 | Explanation | Which commitments produce the overload | **Designed** |
+| 7 | Rebalancing proposals | Suggested changes with trade-offs; per-item approval | **Designed — Proposal + Approved** |
+| 8 | Recovery | Protected rest and recovery time | **Designed** |
+| 9 | SEALY conversation | Explains computed results in SEALY's voice | Concept only — not in demo flow |
+
+¹ The Accept / Reject controls are *visual affordances*. They communicate the confirmation model but do not change state on click, because per-row state toggling is not achievable in a flat click-through prototype. The reviewing step itself is present and unavoidable in the flow.
+
+**Additional screens designed beyond the original set** (concept / next-iteration, in the `IDEAS / v2 CONCEPTS` section): Week View, Stats, Settings, Life Areas Breakdown, Edit Candidate Task, Capture Failed, Home Empty State, SEALY Conversation.
 
 Screens 3, 4, 5, and 7 carry the differentiator. If the set must be reduced, those are the ones to keep.
 
@@ -85,7 +89,7 @@ The prototype phase targets specific technical proofs. Current status is determi
 | Explainable workload visualisation | **Not started** | |
 | Constrained AI explanation of a computed result | **Not started** | Optional if time is short |
 
-**No component is implemented, partially implemented, or tested.**
+**No component is implemented, partially implemented, or tested.** The technical proofs above are unaffected by the design prototype — a connected Figma flow is not evidence that any of them work.
 
 ---
 
@@ -93,33 +97,31 @@ The prototype phase targets specific technical proofs. Current status is determi
 
 | Artefact | Link |
 |---|---|
-| Design file / clickable prototype | Coming soon |
-| Hosted or installable build | Coming soon |
+| Design file / clickable prototype | `https://www.figma.com/design/Y2ce2KYSTXDkNBqLAMcfaF/` |
+| Hosted or installable build | Coming soon — no application code exists |
 | Demo video | Coming soon |
 
-No links are recorded because none exist. Links are added here only once real and reachable.
+**Before submission:** the Figma link above must have sharing set to *Anyone with the link → can view*, and must then be opened from a signed-out browser to confirm it is genuinely reachable. Until that check is done, treat the link as unverified.
 
----
+**Prototype structure:** three pages — `Foundations & Components` (colour, type, spacing, radius, stroke, component library, mascot semantic library), `Prototype` (AUTH · ONBOARDING · CORE · IDEAS/v2 CONCEPTS), and `UX / Iterations` (design-process evidence).
 
 ## Screenshots
 
-None available. Screenshots will be added to this directory once screens exist.
+Not yet exported. Screens now exist in the Figma file; PNG exports of the key journey should be added to this directory before submission so the repository stands on its own without requiring Figma access.
 
 ---
 
-## What Will Be Interactive vs Simulated
+## What Is Interactive vs Simulated
 
-To be completed once the prototype exists. This section must clearly separate:
+Stating this plainly is more credible than implying everything works. It must be accurate at the point of judging.
 
-- **Interactive** — real behaviour backed by working code
-- **Simulated** — designed flows with representative data, no live processing
-- **Static** — visual only
+| Category | What it covers | Present in SEALY today |
+|---|---|---|
+| **Interactive** — real behaviour backed by working code | Live camera capture, real AI extraction, real workload calculation, persistence | **None.** No application code exists. |
+| **Simulated** — designed flows with representative data, no live processing | The entire clickable journey: login, onboarding, capture, scanning, extraction review, confirmation, workload detail, explanation, rebalancing, approval, recovery | **All of it.** Every screen is a designed frame with fixed representative data; taps navigate between frames. |
+| **Static** — visual only | Foundations, component library, mascot semantic library, UX / Iterations evidence page | Yes. |
 
-Stating this distinction plainly is more credible than implying everything works. It must be accurate at the point of judging.
-
-*Currently: nothing is interactive, simulated, or static, because nothing has been built.*
-
----
+**The figures shown in the prototype (7h estimated workload, 4h capacity, +3h difference) are representative example data, not computed output.** Say so during any demonstration.
 
 ## Known Limitations
 

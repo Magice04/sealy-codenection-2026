@@ -649,6 +649,55 @@ Document why the selected SEALY direction performs better than rejected alternat
 
 ---
 
+---
+
+## 3 September 2026 — Iteration 2: First Clickable Design Prototype
+
+### Previous State
+
+Documentation was complete and internally consistent, but no prototype existed in any form. The journey Capture → Understand → Visualise → Rebalance → Recover had been specified in prose and never tested as an interface.
+
+### What Was Built
+
+A Figma file with three pages:
+
+- **Prototype** — 28 connected mobile screens across AUTH, ONBOARDING and CORE, covering the full journey from login through capture, extraction review, workload detail, explanation, rebalancing approval and recovery.
+- **Foundations & Components** — colour, typography, spacing, radius and stroke documentation, a reusable component set (buttons, inputs, task / workload / proposal cards, chips, badges, bottom navigation), and a mascot semantic library.
+- **UX / Iterations** — thirteen sections of design-process evidence.
+
+A further eight next-iteration concept screens were added in an `IDEAS / v2 CONCEPTS` section: Week View, Stats, Settings, Life Areas Breakdown, Edit Candidate Task, Capture Failed, Home Empty State, and SEALY Conversation.
+
+### Decisions Taken During the Build
+
+| # | Issue found | Decision | Reason |
+|---|---|---|---|
+| 1 | Primary call-to-action buttons used white text on `#5BBBCB`, giving a contrast ratio of 2.23:1 | Darkened CTA fills to `#3B7983` (4.94:1) and success to `#247F5E` (4.92:1) | WCAG AA requires 4.5:1 for normal text. The original palette failed on every primary button in the product. |
+| 2 | Extraction Review offered only a single blanket confirmation | Added per-candidate Accept / Reject controls | The AI responsibility model requires review of each candidate, not batch acceptance. A single confirm button contradicted the stated principle. |
+| 3 | Sign Up Success 02 was unreachable, so new sign-ups never saw onboarding | Re-routed Success 01 → Success 02 → Onboarding | Onboarding establishes life areas and capacity; skipping it leaves the workload model unconfigured. |
+| 4 | Recovery screen used the label "Stress forecast"; onboarding copy contained the word "burnout" | Renamed to "Workload forecast"; onboarding disclaimer reworded to state SEALY does not assess health | SEALY reports workload, not health. The language rule applies to the interface, not only to written material. |
+| 5 | Bottom-navigation items were decorative on several screens | Wired Home across all CORE screens; Week / Stats / Settings wired once the corresponding concept screens existed | A visible control that does nothing is a dead end. |
+
+### What Was Rejected
+
+- **Mass renaming of internal layers.** Roughly 400 generically-named decorative and structural sub-layers were audited and left as they are. The effort was judged disproportionate to the readability gained, since they sit beneath clearly-named parents.
+- **Making the Accept / Reject controls stateful.** Per-row toggling is not achievable in a flat click-through prototype without component variants. The controls remain visual affordances and this is recorded as a known limitation rather than concealed.
+
+### Evidence
+
+- Full reactions-graph walk of the Prototype page: 28 screens, every one reachable and every one with an outgoing connection. No dead ends.
+- Mascot audit: 28 placements, all within the per-context size rules (AUTH 112px, Onboarding Welcome 140px, CORE 70–90px), all rendering with transparency, each pose matched to its documented meaning.
+- `prototype/README.md` and `README.md` status sections updated to record that a design prototype exists and that no application code does.
+
+### Outcome
+
+The journey is demonstrable end to end without touching the Figma editor. Nothing is backed by working code; every flow is simulated with representative data, and the figures shown (7h workload against 4h capacity) are example values rather than computed output.
+
+### Open Questions Carried Forward
+
+- Whether the confirmation step reads as safe and controlled or merely tedious — a question for Mentor #2.
+- Whether "7 hours of work against 4 hours of capacity" is understood at a glance, or needs a different visual treatment.
+- Whether effort estimation by students is reliable enough for the capacity calculation to mean anything. This remains the largest unresolved risk to the concept.
+
 ## Iteration History
 
 | Date | Iteration | Main Change |
@@ -656,7 +705,7 @@ Document why the selected SEALY direction performs better than rejected alternat
 | 31 Aug 2026 | Iteration 0 | Broad SEALY concept established |
 | 1 Sep 2026 | Iteration 1 | Problem refined, scope reduced, AI/application responsibilities separated, technical prototype strategy established |
 | 1 Sep 2026 | Iteration 1b | Earlier full-stack blueprint reconciled against Iteration 1 decisions; superseded directions recorded; repository documentation set written to match actual repository state |
-| 2 Sep 2026 | Iteration 2 | To be documented |
+| 3 Sep 2026 | Iteration 2 | First clickable design prototype built: 28 connected screens, design system, UX evidence page; WCAG AA contrast failure fixed; per-candidate review controls added; health-adjacent wording removed from the interface |
 | 10 Sep 2026 | Mentor Iteration | Mentor #1 consultation |
 | 11 Sep 2026 | Post-Mentor Iteration | To be documented |
 | 12 Sep 2026 | Mentor Iteration | Mentor #2 consultation |

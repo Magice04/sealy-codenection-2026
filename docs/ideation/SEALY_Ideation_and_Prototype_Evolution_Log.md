@@ -613,8 +613,8 @@ Before Prototype Judging, the team should be able to demonstrate:
 - [ ] AI-vs-application responsibility explanation
 - [ ] Working camera-scan technical proof if feasible
 - [ ] Deterministic workload/capacity proof if feasible
-- [ ] Mentor #1 feedback documentation
-- [ ] Visible post-mentor iteration
+- [x] Mentor #1 feedback documentation
+- [x] Post-mentor direction documented; implementation evidence still pending
 - [ ] Mentor #2 feedback documentation
 - [ ] Final prototype iteration
 - [ ] Public GitHub repository
@@ -698,6 +698,105 @@ The journey is demonstrable end to end without touching the Figma editor. Nothin
 - Whether "7 hours of work against 4 hours of capacity" is understood at a glance, or needs a different visual treatment.
 - Whether effort estimation by students is reliable enough for the capacity calculation to mean anything. This remains the largest unresolved risk to the concept.
 
+## Mentor #1 Feedback — Low-Input, Agentic Capture Direction
+
+### State Before the Feedback
+
+SEAL's recent ideation had already moved beyond a basic Pomodoro / blocker into a workload-capacity system with Focus, Rebalance, and Recover. Inputs were still described mostly in conventional terms: manual tasks, Google Calendar, check-ins, and an earlier OCR idea that had been treated mainly as a capture feature.
+
+### Mentor Challenge
+
+The mentor challenged the team on a more fundamental UX question:
+
+> **How much must the student do before SEAL can become useful?**
+
+The student should not have to remember every responsibility, know the task upfront, manually enter all details, and then ask SEAL to organise information they already had to reconstruct themselves.
+
+The mentor encouraged broader, more creative input mechanisms, specifically including:
+
+- OCR / photo capture as a strong low-friction input.
+- Automatic task decomposition into smaller subtasks.
+- Agentic / headless-browser aggregation from websites the student can authorise.
+- Telegram bot / API integration feeding structured information toward Calendar / SEAL.
+- Automatic **recommendation** of Focus / Rebalance / Recover while still asking the user to confirm rather than forcing a mode.
+- A much lower learning and interaction cost: after SEAL does the hard interpretation, user actions can often be Yes / No / Edit / Confirm.
+
+The mentor also challenged the team to narrow the broad “student stress and workload” problem to one sharper problem and to be explicit about **what SEAL is building and why**.
+
+### Post-Mentor Product Insight
+
+The emerging narrower problem is:
+
+> **Student responsibilities are fragmented across calendars, portals, messages, screenshots, documents, and memory; reconstructing that workload already costs effort before the student can decide what actually fits.**
+
+The post-mentor direction therefore becomes:
+
+```text
+Low-friction sources
+        ↓
+Collect candidate responsibilities
+        ↓
+Extract + structure
+        ↓
+Decompose vague work into actionable subtasks
+        ↓
+Student confirms / edits
+        ↓
+Compare required workload vs available capacity
+        ↓
+Recommend Focus / Rebalance / Recover
+```
+
+### Agentic / Headless-Browser Exploration
+
+One suggested stretch direction is an authorised headless-browser agent:
+
+```text
+Student-authorised portal / website
+        ↓
+Programmatically controlled browser
+        ↓
+Navigate supported pages
+        ↓
+Extract candidate assignments / deadlines / events
+        ↓
+Normalise + deduplicate
+        ↓
+Human confirmation
+        ↓
+Load Engine
+```
+
+This is **not yet implemented**. It has significant authentication, privacy, reliability, website-policy, and security constraints, and is currently treated as a feasibility / stretch exploration rather than a completed feature.
+
+### Decision Direction
+
+| Feedback | Current response |
+|---|---|
+| Simple manual input is not creative enough | De-emphasise manual entry; keep it only as a fallback |
+| Keep OCR | Retain OCR as a primary low-friction capture concept |
+| User should not remember everything upfront | Explore connected / shared / agentic sources that can produce candidate responsibilities |
+| Split captured work into subtasks | Add editable decomposition as part of the proposed capture-to-action pipeline |
+| Agentic browser | Explore as a narrow technical spike / stretch feature, not a production claim |
+| Telegram integration | Explore as an optional low-friction capture channel |
+| Problem is too broad | Narrow around fragmented responsibilities and workload reconstruction; team validation still required |
+| Auto-switch modes | Compute a recommended mode, but ask the user before applying it |
+| UI learning cost | Prefer system-generated proposals followed by simple Yes / No / Edit / Confirm interactions |
+
+### What Has Actually Changed So Far
+
+- Mentor #1 feedback is now formally documented.
+- The next ideation direction is no longer “add another task-entry form”; it is **minimise student input while maximising structured workload output**.
+- No headless-browser, Telegram, OCR, or automatic-decomposition implementation should be claimed yet unless separate evidence is added.
+
+### Open Questions Carried Forward
+
+- Which single low-friction source provides the best MVP proof: OCR, Calendar, Telegram, or one supported web portal?
+- How should SEAL estimate effort for automatically discovered tasks?
+- How much task decomposition should happen automatically before confirmation becomes overwhelming?
+- What autonomy level feels helpful rather than invasive?
+- Can the core value be understood without teaching users a complicated workflow?
+
 ## Iteration History
 
 | Date | Iteration | Main Change |
@@ -706,8 +805,8 @@ The journey is demonstrable end to end without touching the Figma editor. Nothin
 | 1 Sep 2026 | Iteration 1 | Problem refined, scope reduced, AI/application responsibilities separated, technical prototype strategy established |
 | 1 Sep 2026 | Iteration 1b | Earlier full-stack blueprint reconciled against Iteration 1 decisions; superseded directions recorded; repository documentation set written to match actual repository state |
 | 3 Sep 2026 | Iteration 2 | First clickable design prototype built: 28 connected screens, design system, UX evidence page; WCAG AA contrast failure fixed; per-candidate review controls added; health-adjacent wording removed from the interface |
-| 10 Sep 2026 | Mentor Iteration | Mentor #1 consultation |
-| 11 Sep 2026 | Post-Mentor Iteration | To be documented |
+| 10 Sep 2026 | Mentor Iteration | Mentor #1 feedback: reduce input burden, retain OCR, explore agentic/headless-browser and Telegram capture, narrow problem framing |
+| Post-Mentor | Iteration 3 direction | Low-input pipeline documented: collect → structure → decompose → confirm → capacity reasoning → recommended mode; implementation evidence pending |
 | 12 Sep 2026 | Mentor Iteration | Mentor #2 consultation |
 | 13 Sep 2026 | Final Prototype Iteration | To be documented |
 

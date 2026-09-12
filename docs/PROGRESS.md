@@ -55,7 +55,7 @@ right, and if the real deadline is 13 September, that's 3 days away with
 - Full iteration history (Iteration 0 → 2) in the evolution log
 - AI-responsibility split and technical-feasibility docs
   (`docs/architecture/`)
-- Mentor consultation templates prepared (not filled in)
+- Mentor #1 feedback recorded in `docs/mentor-feedback/mentor-01-sep10.md`; exact mentor/date details and post-feedback implementation evidence still need confirmation
 
 **Ideation (Track B, drafted but not committed to the repo):**
 - 9-idea "what we tried and dropped" story with a kept/dropped table
@@ -128,7 +128,9 @@ track is chosen.
 **Team / people:**
 - [ ] Real member names (both READMEs still have `[Member 1]` / `[Member 2]` placeholders)
 - [ ] Confirm the actual assigned mentors for both consultation slots (both mentor docs say "to be confirmed")
-- [ ] Hold Mentor Consultation #1 and #2, and actually fill in what was said (both currently 100% template, "NOT YET HELD")
+- [x] Record Mentor Consultation #1 feedback
+- [ ] Confirm Mentor #1 identity / actual consultation date and reconcile conflicting draft references
+- [ ] Hold / record Mentor Consultation #2 and fill in what was said
 - [ ] Add a post-mentor iteration entry to the evolution log after each session
 - [ ] If Track B's README §2.3 mentor note (2026-09-09, Lim Zi Yang) is real, fill in what was actually said and what changed as a result — it's currently a `[TODO]`
 

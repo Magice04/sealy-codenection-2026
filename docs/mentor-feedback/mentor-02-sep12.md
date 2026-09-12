@@ -31,10 +31,10 @@
 
 This session is only useful if the first one was acted upon.
 
-- [ ] Mentor #1 feedback recorded in [mentor-01-sep10.md](mentor-01-sep10.md)
-- [ ] Decisions taken and marked Accept / Partial / Reject with reasons
-- [ ] Resulting changes visible in the repository
-- [ ] Post-mentor iteration entry added to the evolution log
+- [x] Mentor #1 feedback recorded in [mentor-01-sep10.md](mentor-01-sep10.md)
+- [ ] Team confirms the proposed Accept / Partial decisions recorded after Mentor #1
+- [ ] Resulting product/prototype changes visible in the repository (documentation update alone is complete; implementation evidence still pending)
+- [x] Post-mentor direction added to the evolution log; implementation evidence still pending
 - [ ] Able to state clearly: "after Mentor #1 we changed X, and here it is"
 
 ---

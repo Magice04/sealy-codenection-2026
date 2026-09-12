@@ -221,11 +221,14 @@ including directions that were explored and rejected.
 
 ## Mentor Feedback
 
-**No mentor session has taken place yet.** Two consultations are scheduled; the
-documents below are prepared templates containing questions, not feedback.
+**Mentor #1 feedback has been recorded.** The session strongly challenged the
+team to reduce user input effort, keep OCR as a high-value capture path, explore
+agentic / headless-browser and Telegram-assisted aggregation, narrow the core
+problem, and make Focus / Rebalance / Recover a recommendation rather than a
+forced mode switch. Exact session identity/date details still need confirmation.
 
-- 📄 [Mentor #1 — 10 September 2026](docs/mentor-feedback/mentor-01-sep10.md) — *not yet held*
-- 📄 [Mentor #2 — 12 September 2026](docs/mentor-feedback/mentor-02-sep12.md) — *not yet held*
+- 📄 [Mentor #1 — first feedback record](docs/mentor-feedback/mentor-01-sep10.md) — **feedback recorded; post-mentor actions pending**
+- 📄 [Mentor #2 — 12 September 2026](docs/mentor-feedback/mentor-02-sep12.md) — *not yet recorded*
 
 ---
 
@@ -246,7 +249,7 @@ sealy-codenection-2026/
 │   ├── ideation/                ← evolution log, alternative directions
 │   ├── ucd/                     ← persona, before/after
 │   ├── architecture/            ← AI responsibility, technical feasibility
-│   ├── mentor-feedback/         ← consultation records (templates)
+│   ├── mentor-feedback/         ← consultation records and follow-up actions
 │   └── research/                ← competitor positioning
 ├── prototype/                   ← prototype scope and status
 └── presentation/                ← slides, video, pitch notes (pending)
@@ -273,7 +276,7 @@ Honest summary as of **3 September 2026**:
 | Visual diagrams (problem tree, mind map, user flow) | Not started |
 | Prototype screenshots exported to repo | Not started |
 | Application code | **Not started** |
-| Mentor consultations | Scheduled, not yet held |
+| Mentor consultations | **Mentor #1 feedback recorded**; Mentor #2 pending |
 | Presentation materials | Not started |
 
 **No application code is implemented.** The prototype demonstrates the intended

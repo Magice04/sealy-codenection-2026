@@ -1,6 +1,6 @@
 # ==================================================
-# SEALY — .gitignore
-# React Native / Expo + Supabase + Vercel
+# SEAL — .gitignore
+# React Native / Expo + Supabase (plus common JS tooling)
 # ==================================================
 
 
@@ -221,7 +221,7 @@ bower_components/
 
 # --------------------------------------------------
 # Firebase
-# Not used by Sealy, but harmless to keep ignored
+# Not used by SEAL, but harmless to keep ignored
 # --------------------------------------------------
 
 .firebase/

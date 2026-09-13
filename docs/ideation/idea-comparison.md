@@ -1,130 +1,102 @@
-# SEALY — Alternative Solution Directions and Decision Rationale
+# SEAL — Idea Comparison and Decision Rationale
 
-> **Purpose:** Record the solution directions the team considered for the Stress & Workload Manager challenge, how they were compared, and why SEALY's current direction was selected.
->
-> **Status:** Iteration 1b, 1 September 2026.
->
-> **Method note:** The scoring below is structured team judgement recorded during ideation. It is not user research, not survey data, and not benchmark measurement. It is included to show reasoning, not to claim empirical validation.
+This file summarizes the ideation path. The full chronology is in the [evolution log](SEAL_Ideation_and_Prototype_Evolution_Log.md).
 
----
+## Ideas considered
 
-## Why This Document Exists
+| # | Direction | What worked | Why it was not enough alone | Current status |
+|---|---|---|---|---|
+| 01 | SEALY chatbot companion | emotional support / conversational character | chat-first workflow adds friction and is not the workload solution | **Dropped as core; mascot kept** |
+| 02 | Photo / OCR task capture | extremely low input friction | OCR-to-task is an input feature, not the decision layer | **Revisited after Mentor #1 as primary import path** |
+| 03 | Holistic five-load score | acknowledged life outside academics | single composite score is arbitrary and difficult to explain | **No composite score; context kept** |
+| 04 | Pomodoro | helps starting work | assumes working harder is the answer | **Focus mechanic kept** |
+| 05 | Strict lock-in | reduces selected distractions | can be punitive; native enforcement is complex | **Simplified “pause selected apps” concept** |
+| 06 | Behaviour-aware focus | recognises start/distraction patterns | surfaced the bigger capacity problem | **Insight kept** |
+| 07 | Capacity + Rebalance Engine | detects when work does not fit time | terminology was too technical for users | **Core engine; UI now says Adjust My Plan** |
+| 08 | Recovery + Balance | makes rest a first-class action | needs non-clinical signals and clear boundaries | **Kept as Take a Break** |
+| 09 | Island + Seal | understandable visual/emotional layer | can become decoration if disconnected from the decision | **Kept as supporting experience** |
 
-The challenge — *Stress & Workload Manager* — can be answered in several genuinely different ways. Choosing one without examining the others would leave the team unable to explain why the chosen direction is better than the obvious alternatives.
+## Why Idea 07 became the core
 
-Five directions were identified during Iteration 0 and Iteration 1. All five are legitimate responses to the challenge. Four were not selected.
+The key scenario is not “a student has many tasks”. Every task manager can show that.
 
----
+The key scenario is:
 
-## The Five Directions Considered
+```text
+Work to finish = 3h35
+Time left      = 2h40
+Shortfall      = 55m
+```
 
-### Direction A — Stress Diary
+That creates a decision problem: a focus timer cannot manufacture the missing 55 minutes.
 
-A journalling application. The student logs mood, energy, and stress level daily. The app charts trends over time and surfaces patterns.
+SEAL therefore acts as a **decision layer**:
 
-**Strength:** Simple to build. Emotionally honest. Low technical risk.
+- if the plan fits → Focus;
+- if the plan does not fit → Adjust;
+- if immediate urgency is manageable and recovery need is high → Take a Break.
 
-**Why it was not selected:** It records a problem without changing it. A student who has already accepted too many commitments learns from the chart that they are under strain, which they already knew. The application holds no information about deadlines, estimated effort, or available time, so it cannot suggest any concrete change. It observes; it cannot act.
+## Mentor #1 changed the input side
 
----
+Before Mentor #1, the concept still assumed too much deliberate task entry.
 
-### Direction B — AI Wellness Chatbot
+Mentor #1 pushed the team toward:
 
-A conversational agent offering support, coping strategies, and encouragement.
+- OCR/photo as low-friction capture;
+- extraction/structuring before the user manually organizes anything;
+- optional task decomposition;
+- future Telegram / agentic / headless-browser source exploration;
+- user confirmation after system interpretation.
 
-**Strength:** Warm, accessible, immediately understandable to a judge.
+This did **not** replace the capacity engine. It improved how data reaches it.
 
-**Why it was not selected:** Two independent reasons.
+## Mentor #2 changed the communication side
 
-First, it has no model of the student's actual workload. Advice given without knowing what is due on Thursday is generic advice, and generic advice is already freely available.
+Mentor #2 / Janelle identified that the system still required too much explanation.
 
-Second, this direction drifts toward mental-health support, which carries a duty of care the team is not positioned to meet. SEALY should help a student make better workload decisions. It should not position itself as a wellbeing intervention.
+The five-load framing and terms such as “schedule pressure” / “rebalance” obscured the simple core. The response was:
 
-This direction was rejected as a *product*, but its conversational quality was retained as SEALY's interface layer.
+```text
+Earlier UI                Current UI
+----------                ----------
+Time free today      →    Work to finish / Time left today
+Schedule pressure    →    55 min short
+Rebalance            →    Adjust My Plan
+Five load scores     →    direct context + one clear recommendation
+Generic plan entries →    course/task/lecturer/duration context
+```
 
----
+The design principle is now:
 
-### Direction C — Smart Task Manager
+> **The user should understand the conclusion before they understand the engine.**
 
-A task manager with AI assistance — better capture, smarter sorting, automatic prioritisation.
+## Current final concept
 
-**Strength:** Clear utility. Familiar mental model. Straightforward to demonstrate.
+```text
+Import from existing sources
+        ↓
+Structure / optional decomposition
+        ↓
+Human confirmation
+        ↓
+Workload-capacity calculation
+        ↓
+Focus / Adjust / Take a Break
+        ↓
+Plan + Island + Insights
+```
 
-**Why it was not selected:** The category is saturated and the team could not identify a defensible reason for a student to switch. More importantly, a task manager answers *"what do I have to do?"* — a question students can usually already answer. The question they cannot answer is *"is all of this actually possible in the time I have?"* A task list of twenty items and a task list of six items look structurally identical; the difference between them is invisible in a list view.
+## What is specifically novel in our concept
 
-Task management is a necessary substrate for SEALY, but it is not the product.
+The claim is intentionally narrow. SEAL does not claim OCR, calendars, Pomodoro or mascots are individually novel.
 
----
+The product hypothesis is that the useful combination is:
 
-### Direction D — Calendar Optimisation Assistant
+1. low-friction multi-source intake;
+2. explicit effort + deadline structure;
+3. transparent **work-to-finish vs time-left** reasoning;
+4. action selection rather than passive reporting;
+5. human-approved plan changes;
+6. recovery as a valid outcome.
 
-An assistant that ingests calendar data and automatically rearranges commitments into optimal time blocks.
-
-**Strength:** Genuinely useful. Addresses scheduling directly.
-
-**Why it was not selected:** It assumes the calendar is already complete and accurate. For the target user it is not — a substantial part of the real load lives on printed handouts, sticky notes, group chats, and memory, and never reaches the calendar at all. Optimising an incomplete calendar produces a confident schedule built on partial information, which is arguably worse than no schedule.
-
-The gap this direction exposed — *the calendar does not contain the real workload* — is what led directly to the physical-to-digital capture idea.
-
----
-
-### Direction E — Workload Capacity Manager (selected)
-
-A system that consolidates commitments from both physical and digital sources, estimates total load against available capacity, identifies where commitments collide, explains the cause, and proposes specific rebalancing.
-
-**Why it was selected:** It is the only direction that addresses the insight the team kept returning to — that no individual responsibility looks unmanageable, and overload only becomes visible when everything is considered together. It also subsumes the useful parts of the rejected directions: it needs task management (C), it produces schedule change proposals (D), and it speaks conversationally (B).
-
----
-
-## Comparison Matrix
-
-Rated 1–5 against the team's reading of the challenge and the target user. Higher is better.
-
-| Criterion | A. Stress diary | B. Wellness chatbot | C. Smart task manager | D. Calendar optimiser | E. Workload capacity manager |
-|---|---|---|---|---|---|
-| Alignment with "Stress & Workload Manager" | 3 | 2 | 3 | 3 | 5 |
-| Actionability — can the user do something specific with the output? | 1 | 2 | 3 | 4 | 5 |
-| Originality relative to existing tools | 2 | 1 | 1 | 3 | 4 |
-| Differentiation — is there a reason to switch? | 1 | 1 | 1 | 3 | 4 |
-| Technical feasibility within the prototype phase | 5 | 4 | 4 | 3 | 3 |
-| Usefulness to the target user | 2 | 2 | 3 | 3 | 5 |
-| Long-term product potential | 2 | 2 | 3 | 4 | 4 |
-| **Total (max 35)** | **16** | **14** | **18** | **23** | **30** |
-
-The selected direction is deliberately *not* the easiest to build. It scores lowest but one on feasibility. That trade-off is accepted and is the reason prototype scope was reduced during Iteration 1 — the ambition sits in the concept, and the scope discipline sits in the implementation plan.
-
----
-
-## What Carried Forward From Rejected Directions
-
-Rejecting a direction did not mean discarding everything in it.
-
-| From | Retained in SEALY |
-|---|---|
-| A. Stress diary | Optional mood and energy input as one signal among several — never as the product itself |
-| B. Wellness chatbot | The conversational interface and the seal mascot as the emotional layer over a workload system |
-| C. Smart task manager | Task capture, structure, and state as the data substrate the workload metric reads from |
-| D. Calendar optimiser | Time-based visualisation and the rebalancing proposal flow |
-
----
-
-## The Decision
-
-> SEALY is a **workload capacity manager**. It consolidates responsibilities from physical and digital sources, shows total load against available capacity, explains why a day or category is overloaded, and proposes specific rebalancing the student approves.
-
-The conversational seal is how SEALY communicates. It is not what SEALY is.
-
----
-
-## Open Questions
-
-- The comparison reflects team judgement only. Testing the core assumption with even a small number of real students would materially strengthen it. **TODO** — not yet done.
-- Direction D's failure mode (optimising an incomplete calendar) is an assumption, not an observation. Worth raising with a mentor.
-
----
-
-## Related Documents
-
-- [Ideation and Prototype Evolution Log](SEALY_Ideation_and_Prototype_Evolution_Log.md)
-- [Competitor and Positioning Analysis](../research/competitor-analysis.md)
-- [Persona — Haziq](../ucd/persona.md)
+This is a product-positioning hypothesis, not a claim that no product anywhere has ever implemented similar capabilities.
